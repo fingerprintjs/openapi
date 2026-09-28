@@ -22,7 +22,8 @@ This repository contains the [OpenAPI](https://spec.openapis.org/oas/) schema of
 ## Getting started
 
 - The OpenAPI schema is published to the [Fingerprint API reference](https://docs.fingerprint.com/reference/server-api) and also as a [Swagger UI app on GitHub pages](https://fingerprintjs.github.io/openapi/).
-- You can also [download the latest schema file here](https://fingerprintjs.github.io/openapi/schemas/fingerprint-server-api-v4-with-examples.yaml).
+- You can also download the latest schema as [Server API schema (YAML)](https://docs.fingerprint.com/reference/server-api.yaml) or [Server API schema (JSON)](https://docs.fingerprint.com/reference/server-api.json).
+- If you need the examples too, use [Server API schema with examples](https://fingerprintjs.github.io/openapi/schemas/fingerprint-server-api-v4-with-examples.yaml).
 
 > [!NOTE]  
 > Please note that some signals and attributes present in the schema are only available to Enterprise or Pro Plus customers on request, as indicated in the signal description.
