@@ -1,5 +1,11 @@
 # openapi
 
+## 3.8.1
+
+### Patch Changes
+
+- Update `license.url` for the Server API v3 ([dc709ab](https://github.com/fingerprintjs/openapi/commit/dc709ab351e8bf856ef439ab10b0d4220d9834c7))
+
 ## 3.8.0
 
 ### Minor Changes
