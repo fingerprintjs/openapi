@@ -11,7 +11,7 @@ info:
     email: support@fingerprint.com
   license:
     name: MIT
-    url: https://github.com/fingerprintjs/fingerprint-pro-server-api-openapi/blob/main/LICENSE
+    url: https://github.com/fingerprintjs/openapi/blob/main/LICENSE
 tags:
   - name: Events
     description: |
