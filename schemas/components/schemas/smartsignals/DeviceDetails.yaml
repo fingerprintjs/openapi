@@ -13,8 +13,8 @@ properties:
     type: string
     examples:
       - SM-G991U
-      - iPhone14,5
-    description: Raw device model identifier, as reported by the mobile OS.
+      - D84AP
+    description: Raw device model identifier, as reported by the mobile OS. On Android, this is the vendor-defined model string (e.g., `SM-G991U`). On iOS, this is an Apple board code (e.g., `D84AP`).
   os_version:
     type: string
     examples:
