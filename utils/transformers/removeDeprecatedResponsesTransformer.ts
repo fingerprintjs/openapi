@@ -1,6 +1,6 @@
 import type { OpenApiDocument } from '../openapi.ts';
 
-export const DEPRECATED_RESPONSE_EXTENSION = 'x-deprecated-response';
+const DEPRECATED_RESPONSE_EXTENSION = 'x-deprecated-response';
 
 // Removes responses marked with `x-deprecated-response: true` from path operations.
 // Used for the docs schema only, SDK schemas keep these responses to avoid breaking changes.
