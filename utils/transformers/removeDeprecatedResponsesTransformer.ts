@@ -3,7 +3,6 @@ import type { OpenApiDocument } from '../openapi.ts';
 const DEPRECATED_RESPONSE_EXTENSION = 'x-deprecated-response';
 
 // Removes responses marked with `x-deprecated-response: true` from path operations.
-// Used for the docs schema only, SDK schemas keep these responses to avoid breaking changes.
 export function removeDeprecatedResponsesTransformer(apiDefinition: OpenApiDocument): void {
   Object.values(apiDefinition.paths ?? {}).forEach((pathItem: any) => {
     Object.values(pathItem ?? {}).forEach((operation: any) => {
