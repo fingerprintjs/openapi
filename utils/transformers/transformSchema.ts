@@ -6,6 +6,7 @@ import { extractFirstParameterExampleTransformer } from './extractFirstParameter
 import { extractPathOperationInlineEnumsTransformer } from './extractPathOperationInlineEnumsTransformer.ts';
 import { parseYaml } from './parseYaml.ts';
 import { removeBigExamplesTransformer } from './removeBigExamplesTransformer.ts';
+import { removeDeprecatedResponsesTransformer } from './removeDeprecatedResponsesTransformer.ts';
 import { removeEdgeTransformer } from './removeEdgeTransformer.ts';
 import { removeFeedbackTransformer } from './removeFeedbackTransformer.ts';
 import { removeWebhookTransformer } from './removeWebhookTransformer.ts';
@@ -39,12 +40,15 @@ export const v4CommonTransformers: Transformer[] = [
 
 export const v4Transformers: Transformer[] = [
   ...v4CommonTransformers,
+  // Hide deprecated responses from the docs. SDK schemas keep them to avoid breaking changes.
+  removeDeprecatedResponsesTransformer,
   // This transformer should run last to ensure all unused schemas are found
   removeUnusedSchemasTransformer,
 ];
 
 export const v4SchemaForSdksCommonTransformers: Transformer[] = [
-  ...v4Transformers,
+  ...v4CommonTransformers,
+  removeUnusedSchemasTransformer,
   extractFirstParameterExampleTransformer,
   removeEdgeTransformer,
   removeFeedbackTransformer,
