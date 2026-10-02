@@ -1,70 +1,22 @@
-import { parseYaml } from './parseYaml.ts';
+import fs from 'fs';
 import { removeDeprecatedResponsesTransformer } from './removeDeprecatedResponsesTransformer.ts';
 import { transformSchema } from './transformSchema.ts';
 
-const yamlWithDeprecatedResponses = `
-openapi: 3.1.1
-paths:
-  /events:
-    get:
-      responses:
-        '200':
-          description: OK
-        '504':
-          description: Gateway Timeout
-          x-deprecated-response: true
-    parameters:
-      - name: foo
-        in: query
-  /events/{event_id}:
-    get:
-      responses:
-        '200':
-          description: OK
-        '500':
-          description: Workspace error
-          x-deprecated-response: false
-        '504':
-          description: Gateway Timeout
-          x-deprecated-response: true
-    patch:
-      responses:
-        '200':
-          description: OK
-`;
+const simpleYaml = fs.readFileSync('./utils/mocks/simple.yaml');
+const schemaWithDeprecatedResponses = fs.readFileSync('./utils/mocks/schemaWithDeprecatedResponses.yaml');
+const schemaWithDeprecatedResponsesRemoved = fs.readFileSync('./utils/mocks/schemaWithDeprecatedResponsesRemoved.yaml');
 
-describe('removeDeprecatedResponsesTransformer', () => {
+const removeDeprecatedResponses = (yaml: string | Buffer) =>
+  transformSchema(yaml, [removeDeprecatedResponsesTransformer]);
+
+describe('Test removeDeprecatedResponsesTransformer', () => {
+  it('does not modify schema without deprecated responses', () => {
+    const result = removeDeprecatedResponses(simpleYaml);
+    expect(result.toString()).toEqual(simpleYaml.toString());
+  });
+
   it('removes responses marked with x-deprecated-response: true', () => {
-    const result = transformSchema(yamlWithDeprecatedResponses, [removeDeprecatedResponsesTransformer]);
-    const parsed = parseYaml(result);
-
-    expect(Object.keys(parsed.paths['/events'].get.responses)).toEqual(['200']);
-    expect(Object.keys(parsed.paths['/events/{event_id}'].get.responses)).toEqual(['200', '500']);
-  });
-
-  it('keeps responses where x-deprecated-response is not true', () => {
-    const result = transformSchema(yamlWithDeprecatedResponses, [removeDeprecatedResponsesTransformer]);
-    const parsed = parseYaml(result);
-
-    expect(parsed.paths['/events/{event_id}'].get.responses['500']['x-deprecated-response']).toBe(false);
-    expect(Object.keys(parsed.paths['/events/{event_id}'].patch.responses)).toEqual(['200']);
-  });
-
-  it('leaves path-level fields that are not operations untouched', () => {
-    const result = transformSchema(yamlWithDeprecatedResponses, [removeDeprecatedResponsesTransformer]);
-    const parsed = parseYaml(result);
-
-    expect(parsed.paths['/events'].parameters).toEqual([{ name: 'foo', in: 'query' }]);
-  });
-
-  it('is a no-op when the document has no paths', () => {
-    const yamlWithoutPaths = `
-openapi: 3.1.1
-components: {}
-`;
-    const result = transformSchema(yamlWithoutPaths, [removeDeprecatedResponsesTransformer]);
-    const parsed = parseYaml(result);
-
-    expect(parsed).toEqual({ openapi: '3.1.1', components: {} });
+    const result = removeDeprecatedResponses(schemaWithDeprecatedResponses);
+    expect(result.toString()).toEqual(schemaWithDeprecatedResponsesRemoved.toString());
   });
 });
