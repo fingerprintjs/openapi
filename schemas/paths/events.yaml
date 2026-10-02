@@ -637,6 +637,7 @@ get:
               externalValue: examples/errors/500_internal_server_error.json
     '504':
       description: Gateway Timeout. Search execution exceeded the allowed timeout window.
+      x-deprecated-response: true
       content:
         application/json:
           schema:
