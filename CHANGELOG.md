@@ -1,5 +1,12 @@
 # openapi
 
+## 3.9.0
+
+### Minor Changes
+
+- **events-search**: Add `503` Service Temporarily Unavailable response to the Events Search endpoint ([8e8df30](https://github.com/fingerprintjs/openapi/commit/8e8df309d86ec68ac2b1a25b882e0e163b799413))
+- **events**: Add `503` Service Temporarily Unavailable response to the Get Event endpoint ([c69ca0f](https://github.com/fingerprintjs/openapi/commit/c69ca0f342ff48d1fd8c820a2111448449b0fce2))
+
 ## 3.8.0
 
 ### Minor Changes
