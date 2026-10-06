@@ -1,0 +1,40 @@
+openapi: 3.1.1
+info:
+  title: test
+  version: '1.0'
+paths:
+  /v4/events:
+    parameters:
+      - name: x-region
+        in: header
+        required: false
+        schema:
+          type: string
+    get:
+      operationId: searchEvents
+      responses:
+        '200':
+          description: OK
+        '500':
+          description: Workspace error
+  /v4/events/{event_id}:
+    get:
+      operationId: getEvent
+      responses:
+        '200':
+          description: OK
+        '500':
+          description: Workspace error
+          x-deprecated-response: false
+    patch:
+      operationId: updateEvent
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
