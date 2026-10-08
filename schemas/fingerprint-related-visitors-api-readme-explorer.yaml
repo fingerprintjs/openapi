@@ -11,7 +11,7 @@ info:
     Deprecation
     Policy](https://dev.fingerprint.com/reference/api-deprecation-policy). If
     you still use this version, please follow our [migration
-    guide](https://dev.fingerprint.com/reference/migrating-from-server-api-v3-to-v4)
+    guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4)
     to migrate from this deprecated version to the new one.
 
 
@@ -79,7 +79,7 @@ paths:
             type: string
           description: >-
             The [visitor
-            ID](https://dev.fingerprint.com/reference/get-function#visitorid)
+            ID](https://docs.fingerprint.com/reference/v3/js-agent-get-function#visitorid)
             for which you want to find the other visitor IDs that originated
             from the same mobile device.
       responses:
