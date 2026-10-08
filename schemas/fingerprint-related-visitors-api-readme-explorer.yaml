@@ -9,7 +9,7 @@ info:
     > This version of Server API is marked as deprecated starting on **Jan 7th
     2026** and will be fully defunct on **Jan 7th 2027** according to our [API
     Deprecation
-    Policy](https://dev.fingerprint.com/reference/api-deprecation-policy). If
+    Policy](https://docs.fingerprint.com/reference/api-deprecation-policy). If
     you still use this version, please follow our [migration
     guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4)
     to migrate from this deprecated version to the new one.
@@ -51,7 +51,7 @@ paths:
         > This version of Server API is marked as deprecated starting on **Jan
         7th 2026** and will be fully removed on **Jan 7th 2027** according to
         our [API Deprecation
-        Policy](https://dev.fingerprint.com/reference/api-deprecation-policy).
+        Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
 
 
         Related visitors API lets you link web visits and in-app browser visits
@@ -70,7 +70,7 @@ paths:
         [support team](https://fingerprint.com/support).
 
         To learn more, see [Related visitors API
-        reference](https://dev.fingerprint.com/reference/related-visitors-api).
+        reference](https://docs.fingerprint.com/reference/related-visitors-api).
       parameters:
         - name: visitor_id
           in: query
