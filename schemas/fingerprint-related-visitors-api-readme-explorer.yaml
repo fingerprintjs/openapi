@@ -6,16 +6,12 @@ info:
 
     >
 
-    > This version of the API will **soon be deprecated** under our [API
-    Deprecation
-    Policy](https://docs.fingerprint.com/reference/api-deprecation-policy). The
-    deprecation period will begin once all proxy and library integrations (both
-    backend and frontend) are released. We will continue to provide full support
-    for 12 months from that effective date. This notice will be updated with the
-    **official deprecation date once it is set**. If you don’t use libraries or
-    proxy integrations, you can use this [migration
+    > This version of Server API will be deprecated on **October 31, 2027**
+    according to our [API Deprecation
+    Policy](https://docs.fingerprint.com/reference/api-deprecation-policy). If
+    you still use this version, please follow our [migration
     guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4)
-    to **start the transition to the new API today**.
+    to migrate to the new one.
 
 
     Use this API to unify and personalize the experience for your anonymous
@@ -51,14 +47,9 @@ paths:
 
         >
 
-        > This version of the API will **soon be deprecated** under our [API
-        Deprecation
+        > This version of Server API will be deprecated on **October 31, 2027**
+        according to our [API Deprecation
         Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
-        The deprecation period will begin once all proxy and library
-        integrations (both backend and frontend) are released. We will continue
-        to provide full support for 12 months from that effective date. This
-        notice will be updated with the **official deprecation date once it is
-        set**. The API will be fully removed after the deprecation period ends.
 
 
         Related visitors API lets you link web visits and in-app browser visits
