@@ -6,12 +6,16 @@ info:
 
     >
 
-    > This version of Server API is marked as deprecated starting on **Jan 7th
-    2026** according to our [API Deprecation
-    Policy](https://docs.fingerprint.com/reference/api-deprecation-policy). If
-    you still use this version, please follow our [migration
+    > This version of the API will **soon be deprecated** under our [API
+    Deprecation
+    Policy](https://docs.fingerprint.com/reference/api-deprecation-policy). The
+    deprecation period will begin once all proxy and library integrations (both
+    backend and frontend) are released. We will continue to provide full support
+    for 12 months from that effective date. This notice will be updated with the
+    **official deprecation date once it is set**. If you don’t use libraries or
+    proxy integrations, you can use this [migration
     guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4)
-    to migrate from this deprecated version to the new one.
+    to **start the transition to the new API today**.
 
 
     Fingerprint Server API allows you to search, update, and delete
@@ -66,12 +70,17 @@ paths:
 
         >
 
-        > This version of Server API is marked as deprecated starting on **Jan
-        7th 2026** according to our [API Deprecation
+        > This version of the API will **soon be deprecated** under our [API
+        Deprecation
         Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
-        If you still use this version, please follow our [migration
+        The deprecation period will begin once all proxy and library
+        integrations (both backend and frontend) are released. We will continue
+        to provide full support for 12 months from that effective date. This
+        notice will be updated with the **official deprecation date once it is
+        set**. If you don’t use libraries or proxy integrations, you can use
+        this [migration
         guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4#migrating-get-/events)
-        to migrate from this deprecated version to the new one.
+        to **start the transition to the new API today**.
 
 
         Get a detailed analysis of an individual identification event, including
@@ -843,12 +852,17 @@ paths:
 
         >
 
-        > This version of Server API is marked as deprecated starting on **Jan
-        7th 2026** according to our [API Deprecation
+        > This version of the API will **soon be deprecated** under our [API
+        Deprecation
         Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
-        If you still use this version, please follow our [migration
+        The deprecation period will begin once all proxy and library
+        integrations (both backend and frontend) are released. We will continue
+        to provide full support for 12 months from that effective date. This
+        notice will be updated with the **official deprecation date once it is
+        set**. If you don’t use libraries or proxy integrations, you can use
+        this [migration
         guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4#migrating-update-/events)
-        to migrate from this deprecated version to the new one.
+        to **start the transition to the new API today**.
 
 
         Change information in existing events specified by `requestId` or *flag
@@ -1211,12 +1225,17 @@ paths:
 
         >
 
-        > This version of Server API is marked as deprecated starting on **Jan
-        7th 2026** according to our [API Deprecation
+        > This version of the API will **soon be deprecated** under our [API
+        Deprecation
         Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
-        If you still use this version, please follow our [migration
+        The deprecation period will begin once all proxy and library
+        integrations (both backend and frontend) are released. We will continue
+        to provide full support for 12 months from that effective date. This
+        notice will be updated with the **official deprecation date once it is
+        set**. If you don’t use libraries or proxy integrations, you can use
+        this [migration
         guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4#migrating-get-/events/search)
-        to migrate from this deprecated version to the new one.
+        to **start the transition to the new API today**.
 
 
         Search for identification events, including Smart Signals, using
@@ -2285,12 +2304,17 @@ paths:
 
         >
 
-        > This version of Server API is marked as deprecated starting on **Jan
-        7th 2026** according to our [API Deprecation
+        > This version of the API will **soon be deprecated** under our [API
+        Deprecation
         Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
-        If you still use this version, please follow our [migration
+        The deprecation period will begin once all proxy and library
+        integrations (both backend and frontend) are released. We will continue
+        to provide full support for 12 months from that effective date. This
+        notice will be updated with the **official deprecation date once it is
+        set**. If you don’t use libraries or proxy integrations, you can use
+        this [migration
         guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4#migrating-get-/visitors)
-        to migrate from this deprecated version to the new one.
+        to **start the transition to the new API today**.
 
 
         This endpoint is deprecated. Use `GET /events/search` to query visit
@@ -2709,12 +2733,17 @@ paths:
 
         >
 
-        > This version of Server API is marked as deprecated starting on **Jan
-        7th 2026** according to our [API Deprecation
+        > This version of the API will **soon be deprecated** under our [API
+        Deprecation
         Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
-        If you still use this version, please follow our [migration
+        The deprecation period will begin once all proxy and library
+        integrations (both backend and frontend) are released. We will continue
+        to provide full support for 12 months from that effective date. This
+        notice will be updated with the **official deprecation date once it is
+        set**. If you don’t use libraries or proxy integrations, you can use
+        this [migration
         guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4)
-        to migrate from this deprecated version to the new one.
+        to **start the transition to the new API today**.
 
 
         Request deleting all data associated with the specified visitor ID. This
