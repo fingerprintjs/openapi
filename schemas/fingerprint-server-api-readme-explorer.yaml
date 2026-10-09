@@ -6,8 +6,8 @@ info:
 
     >
 
-    > This version of Server API will be deprecated on **October 31, 2027**
-    according to our [API Deprecation
+    > This version of Server API will be deprecated on **October 31, 2026** and
+    will stop working on **October 31, 2027** according to our [API Deprecation
     Policy](https://docs.fingerprint.com/reference/api-deprecation-policy). If
     you still use this version, please follow our [migration
     guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4)
@@ -66,8 +66,9 @@ paths:
 
         >
 
-        > This version of Server API will be deprecated on **October 31, 2027**
-        according to our [API Deprecation
+        > This version of Server API will be deprecated on **October 31, 2026**
+        and will stop working on **October 31, 2027** according to our [API
+        Deprecation
         Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
         If you still use this version, please follow our [migration
         guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4#migrating-get-/events)
@@ -843,8 +844,9 @@ paths:
 
         >
 
-        > This version of Server API will be deprecated on **October 31, 2027**
-        according to our [API Deprecation
+        > This version of Server API will be deprecated on **October 31, 2026**
+        and will stop working on **October 31, 2027** according to our [API
+        Deprecation
         Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
         If you still use this version, please follow our [migration
         guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4#migrating-update-/events)
@@ -1211,8 +1213,9 @@ paths:
 
         >
 
-        > This version of Server API will be deprecated on **October 31, 2027**
-        according to our [API Deprecation
+        > This version of Server API will be deprecated on **October 31, 2026**
+        and will stop working on **October 31, 2027** according to our [API
+        Deprecation
         Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
         If you still use this version, please follow our [migration
         guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4#migrating-get-/events/search)
@@ -2285,8 +2288,9 @@ paths:
 
         >
 
-        > This version of Server API will be deprecated on **October 31, 2027**
-        according to our [API Deprecation
+        > This version of Server API will be deprecated on **October 31, 2026**
+        and will stop working on **October 31, 2027** according to our [API
+        Deprecation
         Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
         If you still use this version, please follow our [migration
         guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4#migrating-get-/visitors)
@@ -2709,8 +2713,9 @@ paths:
 
         >
 
-        > This version of Server API will be deprecated on **October 31, 2027**
-        according to our [API Deprecation
+        > This version of Server API will be deprecated on **October 31, 2026**
+        and will stop working on **October 31, 2027** according to our [API
+        Deprecation
         Policy](https://docs.fingerprint.com/reference/api-deprecation-policy).
         If you still use this version, please follow our [migration
         guide](https://docs.fingerprint.com/reference/migrating-from-server-api-v3-to-v4)
