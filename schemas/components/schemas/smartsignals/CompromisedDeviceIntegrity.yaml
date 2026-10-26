@@ -1,0 +1,3 @@
+type: boolean
+description: |
+  `true` if the Android device's boot or system integrity is compromised (e.g., an unlocked bootloader or a failed verified boot), so the device cannot be trusted. `false` if no integrity issue was detected. Available from Android SDK 2.6.0+.

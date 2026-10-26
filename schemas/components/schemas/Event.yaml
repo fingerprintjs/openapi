@@ -154,6 +154,10 @@ properties:
     $ref: smartsignals/ClonedApp.yaml
     x-platforms:
       - android
+  compromised_device_integrity:
+    $ref: smartsignals/CompromisedDeviceIntegrity.yaml
+    x-platforms:
+      - android
   developer_tools:
     $ref: smartsignals/DeveloperTools.yaml
     x-platforms:

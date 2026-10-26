@@ -539,6 +539,14 @@ get:
         Filter events by Active Call Detection result on mobile devices.
 
         > Note: When using this parameter, only events with the `active_call` property set to `true` or `false` are returned. Events without an `active_call` Smart Signal result are left out of the response.
+    - name: compromised_device_integrity
+      in: query
+      schema:
+        type: boolean
+      description: |
+        Filter events by Compromised Device Integrity result on Android devices.
+
+        > Note: When using this parameter, only events with the `compromised_device_integrity` property set to `true` or `false` are returned. Events without a `compromised_device_integrity` Smart Signal result are left out of the response.
   responses:
     '200':
       description: Events matching the filter(s).
