@@ -249,6 +249,7 @@ properties:
     $ref: smartsignals/Simulator.yaml
     x-platforms:
       - ios
+      - browser
   suspect_score:
     $ref: smartsignals/SuspectScore.yaml
     x-platforms:
