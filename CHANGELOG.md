@@ -1,5 +1,16 @@
 # openapi
 
+## 3.10.0
+
+### Minor Changes
+
+- **events-search**: Add `compromised_device_integrity` filter query parameter ([b2fa5bf](https://github.com/fingerprintjs/openapi/commit/b2fa5bf1cdc568cf96f673523c5d57abd2952b7e))
+- **events**: Add `compromised_device_integrity` to `Event` ([b2fa5bf](https://github.com/fingerprintjs/openapi/commit/b2fa5bf1cdc568cf96f673523c5d57abd2952b7e))
+
+### Patch Changes
+
+- Set the Server API v3 deprecation date to October 31, 2026 and the end-of-life date to October 31, 2027 in the endpoint descriptions ([9790b00](https://github.com/fingerprintjs/openapi/commit/9790b0004a6301b902d1e49b89a81523536c81a5))
+
 ## 3.9.0
 
 ### Minor Changes
