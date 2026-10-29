@@ -512,7 +512,7 @@ get:
       schema:
         type: boolean
       description: |
-        Filter events by iOS Simulator Detection result.
+        Filter events by the Simulator Detection result (native iOS SDK and Safari on iOS).
 
         > Note: When using this parameter, only events with the `simulator` property set to `true` or `false` are returned. Events without a `simulator` Smart Signal result are left out of the response.
     - name: source
@@ -558,6 +558,9 @@ get:
             200-ok:
               summary: Example results
               externalValue: examples/events/search/get_event_search_200.json
+            200-ok-edge:
+              summary: Example results for `source=edge`, with events from the Automation Intelligence API
+              externalValue: examples/events/search/get_event_search_edge_200.json
     '400':
       description: Bad request. One or more supplied search parameters are invalid, or a required parameter is missing.
       content:
