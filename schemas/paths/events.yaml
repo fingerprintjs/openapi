@@ -512,7 +512,7 @@ get:
       schema:
         type: boolean
       description: |
-        Filter events by iOS Simulator Detection result.
+        Filter events by the Simulator Detection result (native iOS SDK and Safari on iOS).
 
         > Note: When using this parameter, only events with the `simulator` property set to `true` or `false` are returned. Events without a `simulator` Smart Signal result are left out of the response.
     - name: source
