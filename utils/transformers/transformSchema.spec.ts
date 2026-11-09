@@ -169,25 +169,41 @@ describe('Test transformSchema pipelines for v4', () => {
     expect(hasYamlKey(pathsYaml, 'oneOf')).toBe(false);
   });
 
-  // `Event` as published before it became `EventDevice | EventEdge` (main:schemas/components/schemas/Event.yaml).
-  // SDKs on the flat and normalized schemas must keep the same properties, order and refs.
-  describe('flat and normalized SDK schemas keep the published Event shape', () => {
-    const publishedEvent = parseYaml(fs.readFileSync('./utils/mocks/publishedEvent.yaml'));
+  // SDKs on the flat and normalized schemas get one `Event` object with every property of both variants,
+  // in `EventDevice` order, so their generated code keeps the shape it had before the union.
+  // Expected values come from the variant source files, so new signals synced from koala need no test edits.
+  describe('flat and normalized SDK schemas merge EventDevice and EventEdge into one Event', () => {
+    const readVariant = (name: string) => parseYaml(fs.readFileSync(`./schemas/components/schemas/${name}.yaml`));
+    const eventDevice = readVariant('EventDevice');
+    const eventEdge = readVariant('EventEdge');
     const toComponentRef = (fileRef: string) => fileRef.replace(/^(.*\/)?(\w+)\.yaml$/, '#/components/schemas/$2');
-    const publishedProperties = Object.entries<any>(publishedEvent.properties)
-      .filter(([name]) => name !== 'triggered_by')
-      .map(([name, property]) => ({
+    const variantProperties: Record<string, any> = { ...eventEdge.properties, ...eventDevice.properties };
+    const expectedProperties = [
+      ...new Set([...Object.keys(eventDevice.properties), ...Object.keys(eventEdge.properties)]),
+    ]
+      .filter((name) => name !== 'triggered_by')
+      .map((name) => ({
         name,
-        $ref: toComponentRef(property.$ref),
-        'x-platforms': property['x-platforms'],
+        $ref: toComponentRef(variantProperties[name].$ref),
+        'x-platforms': eventDevice.properties[name]?.['x-platforms'] ?? eventEdge.properties[name]?.['x-platforms'],
       }));
+    // Required in both variants, except `source`: events stored before it was added don't have it.
+    const expectedRequired = eventDevice.required.filter(
+      (name: string) => name !== 'source' && eventEdge.required.includes(name)
+    );
 
     it.each([
       ['v4-flat', v4SchemaForSdksFlatTransformers],
       ['v4-normalized', v4SchemaForSdksNormalizedTransformers],
     ])('%s', (_, transformers) => {
-      const schemas = parseYaml(transformSchema(v4Schema, transformers)).components.schemas;
+      const output = transformSchema(v4Schema, transformers);
+      const schemas = parseYaml(output).components.schemas;
       const event = schemas.Event;
+
+      // No variant schema or reference to one is left behind for the SDK generators.
+      expect(Object.keys(schemas)).not.toContain('EventDevice');
+      expect(Object.keys(schemas)).not.toContain('EventEdge');
+      expect(output).not.toMatch(/#\/components\/schemas\/Event(Device|Edge)\b/);
 
       expect(event.oneOf).toBeUndefined();
       expect(
@@ -196,8 +212,8 @@ describe('Test transformSchema pipelines for v4', () => {
           $ref: property.$ref,
           'x-platforms': property['x-platforms'],
         }))
-      ).toEqual(publishedProperties);
-      expect(event.required).toEqual(publishedEvent.required);
+      ).toEqual(expectedProperties);
+      expect(event.required).toEqual(expectedRequired);
       // The union's description ("discriminated by its `source` property") doesn't fit a flat object.
       expect(event.description).toMatch(/^Contains results from Fingerprint Identification/);
       expect(event.description).not.toMatch(/discriminated/);
