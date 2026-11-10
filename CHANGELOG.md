@@ -1,5 +1,12 @@
 # openapi
 
+## 3.11.0
+
+### Minor Changes
+
+- **events**: Split `Event` into `EventDevice` and `EventEdge` subtypes, discriminated by the `source` field; `EventEdge` replaces `EdgeResponse` ([f942bc4](https://github.com/fingerprintjs/openapi/commit/f942bc4b5fe7e81a3fdb14aed0040d30fae2d1d7))
+- **events**: Add `simulator` signal support for the browser platform ([f942bc4](https://github.com/fingerprintjs/openapi/commit/f942bc4b5fe7e81a3fdb14aed0040d30fae2d1d7))
+
 ## 3.10.0
 
 ### Minor Changes
