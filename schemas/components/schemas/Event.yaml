@@ -1,4 +1,5 @@
 type: object
+title: Event
 description: |
   A Device Intelligence or Automation Intelligence event. Check `source` first, because it determines which properties the event can contain.
 

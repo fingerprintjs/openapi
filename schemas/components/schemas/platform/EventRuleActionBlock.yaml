@@ -1,4 +1,5 @@
 type: object
+title: Block
 description: Informs the client the request should be blocked using the response described by this rule action.
 required:
   - type

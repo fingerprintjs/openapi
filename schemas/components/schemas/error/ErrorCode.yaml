@@ -36,7 +36,7 @@ description: |
     not ready for updates yet. Try again.
     This error happens in rare cases when update API is called immediately
     after receiving the event ID on the client. In case you need to send
-    information right away, we recommend using the JS agent API instead.
+    information right away, we recommend using the JavaScript agent API instead.
   * `failed` - Internal server error.
   * `event_not_found` - The specified event ID was not found. It never existed, expired, or it has been deleted.
   * `missing_module` - The request is invalid because it is missing a required module.
