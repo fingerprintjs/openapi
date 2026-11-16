@@ -1,0 +1,18 @@
+type: object
+description: Submits labels for a single event, processed synchronously.
+additionalProperties: false
+required:
+  - event_id
+  - labels
+properties:
+  event_id:
+    type: string
+    description: The event ID being labelled. Must be no more than 30 days old.
+    examples:
+      - 1735401600000.AbCdEf
+  labels:
+    type: array
+    description: The list of labels to submit. A label may appear only once.
+    minItems: 1
+    items:
+      $ref: LabelsEventLabel.yaml

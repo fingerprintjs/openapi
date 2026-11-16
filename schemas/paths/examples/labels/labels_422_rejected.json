@@ -1,0 +1,12 @@
+{
+  "source_id": "1786370416667.4gsLK5",
+  "source_type": "server_api",
+  "event_id": "1735401600000.AbCdEf",
+  "status": "rejected",
+  "errors": [
+    {
+      "code": "event_too_old",
+      "message": "event is older than 30 days"
+    }
+  ]
+}

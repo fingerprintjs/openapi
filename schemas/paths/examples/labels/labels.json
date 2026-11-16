@@ -1,0 +1,13 @@
+{
+  "event_id": "1735401600000.AbCdEf",
+  "labels": [
+    {
+      "label": "non_fraud",
+      "state": false
+    },
+    {
+      "label": "fake_account",
+      "state": true
+    }
+  ]
+}

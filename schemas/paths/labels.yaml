@@ -1,0 +1,111 @@
+post:
+  tags:
+    - Labels
+  operationId: submitFraudLabels
+  summary: Submit Fraud Labels for an event
+  description: |
+    Submits labels for a single event, no more than 30 days old. The submission is processed synchronously — a `200`
+    response means the labels were stored (`status: applied`), or that the event already had them (`status:
+    unchanged`). A `422` with `status: rejected` means the labels were not stored; see `errors`.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/LabelsRequest.yaml
+        examples:
+          valid:
+            summary: Example request
+            externalValue: examples/labels/labels.json
+  responses:
+    '200':
+      description: OK. The labels were stored, or the event already had them.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LabelsResponse.yaml
+          examples:
+            200-applied:
+              summary: Example response
+              externalValue: examples/labels/labels_200.json
+    '400':
+      description: |
+        Bad request. The request payload is not valid: a required field is missing or mistyped.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error/ErrorResponse.yaml
+          examples:
+            400-bad-request:
+              summary: Error response when the request body is invalid.
+              externalValue: examples/errors/400_request_body_invalid.json
+    '403':
+      description: Forbidden. Access to this API is denied.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error/ErrorResponse.yaml
+          examples:
+            403-secret-api-key-required:
+              summary: Error response when the secret API key was not provided.
+              externalValue: examples/errors/403_secret_api_key_required.json
+            403-secret-api-key-not-found:
+              summary: Error response when the provided secret API key does not exist.
+              externalValue: examples/errors/403_secret_api_key_not_found.json
+            403-feature-not-enabled:
+              summary: Error response when Fraud Labels submission is not enabled for the workspace.
+              externalValue: examples/errors/403_feature_not_enabled.json
+    '413':
+      description: Bad request. The request payload is too large.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error/ErrorResponse.yaml
+          examples:
+            '413':
+              summary: Payload too large error
+              externalValue: examples/errors/413_payload_too_large.json
+    '422':
+      description: |
+        Unprocessable. The payload is well-formed, but the event can't be labelled (e.g. its `event_id` is too old or
+        doesn't exist, a label appears more than once, or the requested labels conflict with the event's current
+        ones). Nothing was stored: `status` is `rejected`, and `errors` describes why.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LabelsResponse.yaml
+          examples:
+            422-rejected:
+              summary: Response when the labels were rejected.
+              externalValue: examples/labels/labels_422_rejected.json
+    '429':
+      description: Too Many Requests. The request is throttled.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error/ErrorResponse.yaml
+          examples:
+            429-too-many-requests-error:
+              summary: Too many requests error
+              externalValue: examples/errors/429_too_many_requests.json
+    '500':
+      description: Internal server error.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error/ErrorResponse.yaml
+          examples:
+            500-error:
+              summary: Request failed
+              externalValue: examples/errors/500_internal_server_error.json
+    '503':
+      description: |
+        Service Temporarily Unavailable. Nothing was stored; the request can be retried as is.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error/ErrorResponse.yaml
+          examples:
+            503-service-temporarily-unavailable:
+              summary: Error response when the service is temporarily unavailable.
+              externalValue: examples/errors/503_service_unavailable.json
