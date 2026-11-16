@@ -10,6 +10,11 @@ items:
       examples:
         - automation_tool
       description: Customer-facing label name defined by the customer.
+    category:
+      type: string
+      examples:
+        - account_takeover
+      description: The fraud category of the label, chosen when the label was created, for example `payment_fraud` or `account_takeover`.
     prediction:
       type: boolean
     ml_score:
@@ -20,5 +25,18 @@ items:
       minimum: 0
       maximum: 1
       description: Raw model score between 0 and 1.
+    version:
+      type: string
+      examples:
+        - '3'
+      description: The version of the model that produced this prediction. Each label has a separate model for each platform (web, iOS and Android) with its own version, so compare versions only for the same label and platform.
+    threshold:
+      type: number
+      format: double
+      examples:
+        - 0.6
+      minimum: 0
+      maximum: 1
+      description: The threshold this prediction used. `prediction` is `true` when `ml_score` is greater than or equal to `threshold`. You can change the threshold for each label in the Dashboard.
 description: |
-  Each label returns a prediction (true or false) for a specific use case (label field) based on a machine learning score. The machine learning score is determined by a model trained on customer data for that use case. This field is in the beta phase and only available to select customers. If you are interested, please [contact our support team](https://fingerprint.com/support/).
+  Fraud Score predictions for this event, one item per label with an active Fraud Score model in your workspace. Each item returns a prediction (true or false) for a specific label, based on a machine learning score from a model trained on the fraud labels you submitted. Use predictions as one input to your fraud decisions, alongside your own investigation, rather than as the only basis for decisions that significantly affect your users. Available only to workspaces with Fraud Score enabled.

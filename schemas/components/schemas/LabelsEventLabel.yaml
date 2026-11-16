@@ -1,0 +1,19 @@
+type: object
+description: A single label to apply (or unset) on an event.
+additionalProperties: false
+required:
+  - label
+  - state
+properties:
+  label:
+    type: string
+    description: The user-defined label slug.
+    pattern: ^[a-z0-9]+(?:_[a-z0-9]+)*$
+    maxLength: 64
+    examples:
+      - fake_account
+  state:
+    type: boolean
+    description: The desired state of the label, `true` for the label is applied, `false` to unset it.
+    examples:
+      - true

@@ -1,0 +1,12 @@
+type: string
+enum:
+  - applied
+  - unchanged
+  - rejected
+description: |
+  The result of labelling the event:
+  * `applied` - The labels were stored, changing the event's labelled state.
+  * `unchanged` - The event's labelled state already matched every submitted label, nothing was changed.
+  * `rejected` - The labels could not be stored, and the event's labelled state is unchanged. See `errors`.
+examples:
+  - applied

@@ -1,0 +1,15 @@
+type: object
+description: A stable error code and message describing why a label submission was rejected.
+additionalProperties: false
+required:
+  - code
+  - message
+properties:
+  code:
+    type: string
+    examples:
+      - invalid_event_id
+  message:
+    type: string
+    examples:
+      - event id is invalid

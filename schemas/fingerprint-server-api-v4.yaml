@@ -22,6 +22,9 @@ tags:
   - name: Edge
     description: |
       Create events with the Automation Intelligence API.
+  - name: Labels
+    description: |
+      Submit confirmed fraud and non-fraud outcomes for events to train your Fraud Score models.
 servers:
   - url: https://api.fpjs.io/v4
     description: Global
@@ -42,6 +45,8 @@ paths:
     $ref: paths/events.yaml
   /visitors/{visitor_id}:
     $ref: paths/visitors.yaml
+  /labels:
+    $ref: paths/labels.yaml
 webhooks:
   event:
     post:
