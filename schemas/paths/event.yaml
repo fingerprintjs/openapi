@@ -128,7 +128,7 @@ patch:
   description: |
     Change information in existing events specified by `event_id` or *flag suspicious events*.
 
-    When an event is created, it can be assigned `linked_id` and `tags` submitted through the JS agent parameters. 
+    When an event is created, it can be assigned `linked_id` and `tags` submitted through the JavaScript agent parameters.
     This information might not have been available on the client initially, so the Server API permits updating these attributes after the fact.
 
     **Warning** You can only update events created within the last 10 days. Updating an older event returns HTTP 400 with the message `event is too old to be updated (> 10 days)`, even if your plan retains events for longer.
