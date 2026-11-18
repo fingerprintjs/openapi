@@ -67,11 +67,12 @@ jobs:
             2. Review the diff: `git diff origin/${{ github.event.pull_request.base.ref }}...HEAD -- schemas/`
 
             3. Decide if a changeset is needed. If so, add one per topic (share a
-               filename prefix for related entries), picking a scope (events,
-               visitors, webhook, related-visitors, events-search — omit if none
-               fits) and a bump (`minor` is the common case for sync PRs). Skip it
-               if nothing in the diff warrants one. Run `pnpm lint:changesets` and
-               fix any issues.
+               filename prefix for related entries), picking a scope and a bump
+               (`minor` is the common case for sync PRs). The valid scopes are the
+               top-level keys in `config/scopes.yaml`; pick the one whose `path`
+               and `methods` match the endpoint the change affects, and omit the
+               scope if none fits. Skip the changeset if nothing in the diff
+               warrants one. Run `pnpm lint:changesets` and fix any issues.
 
             4. Write a one-line PR title caption to `pr-caption.txt` (repo root,
                caption text only) describing the diff, regardless of whether a
