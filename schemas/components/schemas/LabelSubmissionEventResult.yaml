@@ -23,9 +23,9 @@ properties:
     examples:
       - 1735401600000.AbCdEf
   status:
-    $ref: LabelsStatus.yaml
+    $ref: LabelSubmissionEventOutcome.yaml
   errors:
     type: array
     description: The reasons the labels were rejected. Omitted unless `status` is `rejected`.
     items:
-      $ref: LabelsEventError.yaml
+      $ref: LabelSubmissionError.yaml
