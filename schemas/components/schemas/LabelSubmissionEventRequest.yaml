@@ -15,4 +15,4 @@ properties:
     description: The list of labels to submit. A label may appear only once.
     minItems: 1
     items:
-      $ref: LabelsEventLabel.yaml
+      $ref: LabelSubmissionLabel.yaml

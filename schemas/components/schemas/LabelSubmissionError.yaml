@@ -1,5 +1,5 @@
 type: object
-description: A stable error code and message describing why a label submission was rejected.
+description: A stable error code and message describing why labels in a submission could not be applied.
 additionalProperties: false
 required:
   - code

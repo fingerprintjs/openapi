@@ -1,7 +1,7 @@
 post:
   tags:
     - Labels
-  operationId: submitFraudLabels
+  operationId: submitEventFraudLabels
   summary: Submit Fraud Labels for an event
   description: |
     Submits labels for a single event, no more than 30 days old. The submission is processed synchronously — a `200`
@@ -12,7 +12,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/LabelsRequest.yaml
+          $ref: ../components/schemas/LabelSubmissionEventRequest.yaml
         examples:
           valid:
             summary: Example request
@@ -23,7 +23,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/LabelsResponse.yaml
+            $ref: ../components/schemas/LabelSubmissionEventResult.yaml
           examples:
             200-applied:
               summary: Example response
@@ -73,7 +73,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/LabelsResponse.yaml
+            $ref: ../components/schemas/LabelSubmissionEventResult.yaml
           examples:
             422-rejected:
               summary: Response when the labels were rejected.
