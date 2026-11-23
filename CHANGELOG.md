@@ -1,5 +1,12 @@
 # openapi
 
+## 3.12.0
+
+### Minor Changes
+
+- Add `POST /labels` endpoint (`submitFraudLabels`) for submitting confirmed fraud outcomes on events ([1b459b5](https://github.com/fingerprintjs/openapi/commit/1b459b51ea302c6c55cdf10771475926bd5b8bf9))
+- **events**: Add `category`, `version`, and `threshold` fields to `Labels` smart signal items ([1b459b5](https://github.com/fingerprintjs/openapi/commit/1b459b51ea302c6c55cdf10771475926bd5b8bf9))
+
 ## 3.11.0
 
 ### Minor Changes
