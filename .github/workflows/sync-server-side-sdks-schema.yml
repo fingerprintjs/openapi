@@ -56,7 +56,7 @@ jobs:
       app-id: ${{ vars.RUNNER_APP_ID }}
       repository: node-sdk
       pre-release: ${{ inputs.pre-release }}
-      allowed-scopes: events,visitors,webhook,related-visitors,events-search
+      allowed-scopes: events,visitors,webhook,related-visitors,events-search,labels
       force: ${{ inputs.force }}
     secrets:
       APP_PRIVATE_KEY: ${{ secrets.RUNNER_APP_PRIVATE_KEY }}
@@ -76,7 +76,7 @@ jobs:
       app-id: ${{ vars.RUNNER_APP_ID }}
       repository: go-sdk
       pre-release: ${{ inputs.pre-release }}
-      allowed-scopes: events,visitors,webhook,related-visitors,events-search
+      allowed-scopes: events,visitors,webhook,related-visitors,events-search,labels
       force: ${{ inputs.force }}
     secrets:
       APP_PRIVATE_KEY: ${{ secrets.RUNNER_APP_PRIVATE_KEY }}
@@ -96,7 +96,7 @@ jobs:
       app-id: ${{ vars.RUNNER_APP_ID }}
       repository: dotnet-sdk
       pre-release: ${{ inputs.pre-release }}
-      allowed-scopes: events,visitors,webhook,related-visitors,events-search
+      allowed-scopes: events,visitors,webhook,related-visitors,events-search,labels
       force: ${{ inputs.force }}
     secrets:
       APP_PRIVATE_KEY: ${{ secrets.RUNNER_APP_PRIVATE_KEY }}
@@ -117,7 +117,7 @@ jobs:
       repository: python-sdk
       pre-release: ${{ inputs.pre-release }}
       pre-release-tag: rc
-      allowed-scopes: events,visitors,webhook,related-visitors,events-search
+      allowed-scopes: events,visitors,webhook,related-visitors,events-search,labels
       force: ${{ inputs.force }}
     secrets:
       APP_PRIVATE_KEY: ${{ secrets.RUNNER_APP_PRIVATE_KEY }}
@@ -139,7 +139,7 @@ jobs:
       repository: java-sdk
       pre-release: ${{ inputs.pre-release }}
       pre-release-tag: rc
-      allowed-scopes: events,visitors,webhook,related-visitors,events-search
+      allowed-scopes: events,visitors,webhook,related-visitors,events-search,labels
       force: ${{ inputs.force }}
     secrets:
       APP_PRIVATE_KEY: ${{ secrets.RUNNER_APP_PRIVATE_KEY }}
@@ -160,7 +160,7 @@ jobs:
       repository: php-sdk
       pre-release: ${{ inputs.pre-release }}
       pre-release-tag: beta
-      allowed-scopes: events,visitors,webhook,related-visitors,events-search
+      allowed-scopes: events,visitors,webhook,related-visitors,events-search,labels
       force: ${{ inputs.force }}
     secrets:
       APP_PRIVATE_KEY: ${{ secrets.RUNNER_APP_PRIVATE_KEY }}
